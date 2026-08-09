@@ -1,0 +1,58 @@
+{
+  "releases": {
+    "1.1.0": {
+      "publishedAt": "2026-08-09T14:27:48.356Z",
+      "sizeMb": 96,
+      "mandatory": true,
+      "notes": {
+        "en": {
+          "new": [
+            "SpaleVoice now has accounts. You sign in once, and your licence follows you to any computer you install it on.",
+            "A licence screen that tells you who the licence is for, how many computers it covers, and which one you are on.",
+            "Updates now show you what changed before you download anything — this list.",
+            "The setup window has SpaleVoice's own frame instead of the plain Windows one."
+          ],
+          "fixed": [
+            "The setup window ignored your light or dark choice and was always dark.",
+            "The setup window's close button is now part of the app, so it matches everything else."
+          ],
+          "gone": [
+            "The old version that ran without a licence. 1.0.0 is retired and will not be offered again."
+          ]
+        },
+        "sr": {
+          "new": [
+            "SpaleVoice sada ima naloge. Prijavite se jednom, i licenca vas prati na svaki računar na koji ga instalirate.",
+            "Ekran licence koji vam kaže na koga glasi, koliko računara pokriva i na kom ste trenutno.",
+            "Ažuriranja sada pokazuju šta se menja pre nego što bilo šta preuzmete — ovaj spisak.",
+            "Prozor za podešavanje ima SpaleVoice okvir umesto običnog Windows-ovog."
+          ],
+          "fixed": [
+            "Prozor za podešavanje nije poštovao izbor svetle ili tamne teme i uvek je bio taman.",
+            "Dugme za zatvaranje tog prozora je sada deo aplikacije, pa se uklapa sa ostatkom."
+          ],
+          "gone": [
+            "Stara verzija koja je radila bez licence. 1.0.0 je povučena i više se neće nuditi."
+          ]
+        },
+        "zh": {
+          "new": [
+            "SpaleVoice 现在有账户了。登录一次，授权就会跟着你到任何一台安装它的电脑上。",
+            "新增授权页面，显示授权归谁、覆盖几台电脑，以及你当前在哪一台上。",
+            "更新现在会在下载之前告诉你有什么变化 — 就是这份清单。",
+            "设置窗口用上了 SpaleVoice 自己的窗框，不再是普通的 Windows 样式。"
+          ],
+          "fixed": [
+            "设置窗口此前忽略你选择的浅色或深色主题，始终显示深色。",
+            "设置窗口的关闭按钮现在属于应用本身，与其他部分保持一致。"
+          ],
+          "gone": [
+            "没有授权检查的旧版本。1.0.0 已停用，不会再被提供。"
+          ]
+        }
+      }
+    }
+  },
+  "latest": "1.1.0",
+  "minimumVersion": "1.1.0"
+}
