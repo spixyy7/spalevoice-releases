@@ -288,8 +288,45 @@
           ]
         }
       }
+    },
+    "1.7.0": {
+      "publishedAt": "2026-08-09T19:22:06.113Z",
+      "sizeMb": 96,
+      "mandatory": false,
+      "notes": {
+        "en": {
+          "new": [
+            "SpaleVoice can now run a model on your own computer. Settings shows what your machine can handle, downloads the one you pick with a progress figure, and transcribes without sending your voice anywhere or costing anything per minute.",
+            "Setup asks where to install. If you already have SpaleVoice, it goes where it already is and does not ask."
+          ],
+          "fixed": [
+            "Setup stops with an explanation on a computer that cannot run SpaleVoice, instead of installing and failing on first launch."
+          ],
+          "gone": []
+        },
+        "sr": {
+          "new": [
+            "SpaleVoice sada može da radi na modelu koji stoji na vašem računaru. U Podešavanjima piše šta vaša mašina može da povuče, preuzima izabrani model uz prikaz procenta, i prepisuje bez slanja glasa bilo gde i bez troška po minutu.",
+            "Podešavanje pita gde da instalira. Ako već imate SpaleVoice, ide tamo gde već stoji i ne pita."
+          ],
+          "fixed": [
+            "Podešavanje staje uz objašnjenje na računaru koji ne može da pokrene SpaleVoice, umesto da se instalira pa da pukne pri prvom pokretanju."
+          ],
+          "gone": []
+        },
+        "zh": {
+          "new": [
+            "SpaleVoice 现在可以使用你自己电脑上的模型。设置里会显示你的机器能带动什么，下载时显示进度百分比，转写过程不会把你的声音发送到任何地方，也不按分钟计费。",
+            "安装程序会询问安装位置。如果你已经装过 SpaleVoice，它会直接装在原来的位置，不再询问。"
+          ],
+          "fixed": [
+            "在无法运行 SpaleVoice 的电脑上，安装程序会给出说明并停止，而不是装完之后在首次启动时失败。"
+          ],
+          "gone": []
+        }
+      }
     }
   },
-  "latest": "1.6.0",
+  "latest": "1.7.0",
   "minimumVersion": "1.6.0"
 }
