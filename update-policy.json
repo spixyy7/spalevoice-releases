@@ -51,8 +51,39 @@
           ]
         }
       }
+    },
+    "1.1.1": {
+      "publishedAt": "2026-08-09T14:34:06.327Z",
+      "sizeMb": 96,
+      "mandatory": false,
+      "notes": {
+        "en": {
+          "new": [
+            "Your account and licence are now in the tray menu, so you can open them whenever you like instead of finding out when you try to talk."
+          ],
+          "fixed": [
+            "The tray menu now says plainly when you are not signed in, rather than looking the same either way."
+          ]
+        },
+        "sr": {
+          "new": [
+            "Nalog i licenca su sada u meniju u sistemskoj traci, pa možete da ih otvorite kad hoćete umesto da saznate tek kad pokušate da pričate."
+          ],
+          "fixed": [
+            "Meni u sistemskoj traci sada jasno kaže kada niste prijavljeni, umesto da izgleda isto u oba slučaja."
+          ]
+        },
+        "zh": {
+          "new": [
+            "账户和授权现在放进了托盘菜单，你随时可以打开，不必等到开口说话时才发现。"
+          ],
+          "fixed": [
+            "托盘菜单现在会明确显示你尚未登录，而不是两种情况看起来完全一样。"
+          ]
+        }
+      }
     }
   },
-  "latest": "1.1.0",
+  "latest": "1.1.1",
   "minimumVersion": "1.1.0"
 }
