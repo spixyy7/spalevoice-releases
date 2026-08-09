@@ -202,8 +202,48 @@
           ]
         }
       }
+    },
+    "1.5.0": {
+      "publishedAt": "2026-08-09T18:07:02.257Z",
+      "sizeMb": 96,
+      "mandatory": false,
+      "notes": {
+        "en": {
+          "new": [
+            "You can throw away what you are saying. Press Escape while dictating and the whole thing goes — the words still being recognised and the ones already typed. You can change the key in Settings under Hotkeys.",
+            "The bubble can be any size. Three sizes to pick from, or drag the slider for anything in between; it resizes while you drag so you can see what you are choosing."
+          ],
+          "fixed": [
+            "An update no longer opens a window over whatever you were doing. It arrives as a notification from the tray, and the list of changes opens only if you click it. A required update still shows straight away.",
+            "When an update finished downloading it used to put a dialog box in front of you, mid-sentence. Now it waits quietly in the tray."
+          ],
+          "gone": []
+        },
+        "sr": {
+          "new": [
+            "Možete da bacite ono što govorite. Pritisnete Escape usred diktata i nestaje sve — i reči koje se još prepoznaju i one koje su već otkucane. Taster se menja u Podešavanjima, pod Prečice.",
+            "Oblak može da bude koje god veličine hoćete. Tri ponuđene, ili klizač za sve između; menja se dok vučete, pa vidite šta birate."
+          ],
+          "fixed": [
+            "Ažuriranje više ne otvara prozor preko onoga što radite. Stiže kao obaveštenje iz trake sa alatkama, a spisak izmena se otvara samo ako kliknete. Obavezno ažuriranje se i dalje prikazuje odmah.",
+            "Kad se ažuriranje preuzme, ranije vam je iskakao prozor nasred rečenice. Sada čeka mirno u traci."
+          ],
+          "gone": []
+        },
+        "zh": {
+          "new": [
+            "你可以丢掉正在说的内容。听写途中按 Escape，整段都会消失——还在识别的词，以及已经打出来的词。按键可以在设置的快捷键里更改。",
+            "悬浮气泡可以是任意大小。三种预设，或者拖动滑块选择之间的任何尺寸；拖动时实时变化，所见即所得。"
+          ],
+          "fixed": [
+            "更新不再在你做事时弹出窗口。它现在以托盘通知的形式出现，点击才会打开更新内容列表。必需的更新仍会立即显示。",
+            "更新下载完成后，过去会在你打字时弹出对话框。现在它安静地待在托盘里。"
+          ],
+          "gone": []
+        }
+      }
     }
   },
-  "latest": "1.4.0",
+  "latest": "1.5.0",
   "minimumVersion": "1.4.0"
 }
