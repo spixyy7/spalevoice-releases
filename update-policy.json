@@ -242,8 +242,54 @@
           "gone": []
         }
       }
+    },
+    "1.6.0": {
+      "publishedAt": "2026-08-09T18:47:08.021Z",
+      "sizeMb": 96,
+      "mandatory": true,
+      "notes": {
+        "en": {
+          "new": [
+            "A What's new section in Settings: every version and what changed in it, in your language.",
+            "Decide straight from the notification — Update now, or Later. Update now downloads and installs on its own."
+          ],
+          "fixed": [
+            "Updates now arrive on their own, without waiting for a restart.",
+            "A required update installs itself instead of waiting to be clicked."
+          ],
+          "gone": [
+            "All older installers. They can no longer be downloaded, which is why this update is required."
+          ]
+        },
+        "sr": {
+          "new": [
+            "Odeljak „What's new\" u Podešavanjima: svaka verzija i šta je u njoj promenjeno, na vašem jeziku.",
+            "Odlučite odmah iz obaveštenja — sada ili kasnije. „Sada\" se preuzme i instalira samo."
+          ],
+          "fixed": [
+            "Ažuriranja sada stižu sama, bez čekanja na restart.",
+            "Obavezno ažuriranje se instalira samo, ne čeka klik."
+          ],
+          "gone": [
+            "Svi stariji instalateri. Više se ne mogu preuzeti, i zato je ovo ažuriranje obavezno."
+          ]
+        },
+        "zh": {
+          "new": [
+            "设置里新增「What's new」：每个版本以及各自的改动，用你的语言显示。",
+            "直接在通知里决定——立即更新，或稍后。立即更新会自行下载并安装。"
+          ],
+          "fixed": [
+            "更新现在会自动送达，不必等到重启。",
+            "必需的更新会自行安装，不再等待点击。"
+          ],
+          "gone": [
+            "所有旧版安装包。它们已无法下载，这也是本次更新为必需的原因。"
+          ]
+        }
+      }
     }
   },
-  "latest": "1.5.0",
-  "minimumVersion": "1.4.0"
+  "latest": "1.6.0",
+  "minimumVersion": "1.6.0"
 }
