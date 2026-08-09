@@ -325,8 +325,48 @@
           "gone": []
         }
       }
+    },
+    "1.8.0": {
+      "publishedAt": "2026-08-09T19:54:05.633Z",
+      "sizeMb": 96,
+      "mandatory": true,
+      "notes": {
+        "en": {
+          "new": [
+            "Forgotten your password? Ask for a code, type the six digits from the email, and set a new one — all inside SpaleVoice.",
+            "If you already have a Whisper model on your computer, SpaleVoice finds it and uses it. No second download of a file you have.",
+            "Setup now says which service each model bills to, and asks for the ElevenLabs key only if you pick Scribe."
+          ],
+          "fixed": [
+            "Notifications appear only when there is actually an update."
+          ],
+          "gone": []
+        },
+        "sr": {
+          "new": [
+            "Zaboravili ste lozinku? Zatražite kod, ukucajte šest cifara iz imejla i postavite novu — sve unutar SpaleVoice-a.",
+            "Ako već imate Whisper model na računaru, SpaleVoice ga pronađe i koristi. Bez ponovnog preuzimanja fajla koji imate.",
+            "Podešavanje sada kaže kod koga se svaki model naplaćuje, i traži ElevenLabs ključ samo ako izaberete Scribe."
+          ],
+          "fixed": [
+            "Obaveštenja se javljaju samo kada zaista postoji ažuriranje."
+          ],
+          "gone": []
+        },
+        "zh": {
+          "new": [
+            "忘记密码？申请验证码，输入邮件里的六位数字，然后设置新密码——全部在 SpaleVoice 里完成。",
+            "如果你的电脑上已经有 Whisper 模型，SpaleVoice 会找到并直接使用，不会重复下载你已有的文件。",
+            "安装设置现在会说明每个模型由哪家服务计费，只有选择 Scribe 时才会索取 ElevenLabs 密钥。"
+          ],
+          "fixed": [
+            "只有真的有更新时才会弹出通知。"
+          ],
+          "gone": []
+        }
+      }
     }
   },
-  "latest": "1.7.0",
-  "minimumVersion": "1.6.0"
+  "latest": "1.8.0",
+  "minimumVersion": "1.8.0"
 }
