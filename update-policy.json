@@ -119,8 +119,45 @@
           ]
         }
       }
+    },
+    "1.3.0": {
+      "publishedAt": "2026-08-09T16:24:40.446Z",
+      "sizeMb": 96,
+      "mandatory": false,
+      "notes": {
+        "en": {
+          "new": [
+            "You can send a suggestion any time — there is a button in the top corner of Settings, a Feedback section at the bottom of it, and an entry in the tray menu.",
+            "Once in a long while, after you have used SpaleVoice enough to have an opinion, it will ask whether there is anything you would change. Never while you are dictating.",
+            "That question comes with Later and Don't ask again, and Don't ask again is honoured for good — though you can turn it back on in Settings if you change your mind."
+          ],
+          "fixed": [
+            "Reporting a problem no longer offers to restart the app, which made no sense when nothing had crashed."
+          ]
+        },
+        "sr": {
+          "new": [
+            "Predlog možete poslati kad god hoćete — dugme je u gornjem uglu Settings-a, sekcija Feedback je na dnu, a postoji i stavka u meniju u sistemskoj traci.",
+            "S vremena na vreme, kada budete koristili SpaleVoice dovoljno da imate mišljenje, pitaće vas ima li nešto što biste promenili. Nikada dok diktirate.",
+            "To pitanje ima i Kasnije i Ne pitaj me više, a Ne pitaj me više se poštuje zauvek — mada možete da ga vratite u Settings-u ako se predomislite."
+          ],
+          "fixed": [
+            "Prijava problema više ne nudi restart programa, što nije imalo smisla kada se ništa nije srušilo."
+          ]
+        },
+        "zh": {
+          "new": [
+            "你随时都可以提建议 — 设置页右上角有个按钮，底部有「反馈」一节，托盘菜单里也有。",
+            "偶尔一次，等你用得足够多、有了看法之后，它会问你有没有想改的地方。绝不会在你口述的时候打扰。",
+            "这个提问带有「以后再说」和「不要再问我」，后者会被永久遵守 — 不过你改主意的话，可以在设置里重新打开。"
+          ],
+          "fixed": [
+            "反馈问题时不再提示重启应用 — 什么都没崩溃的时候，那个按钮毫无意义。"
+          ]
+        }
+      }
     }
   },
-  "latest": "1.2.0",
+  "latest": "1.3.0",
   "minimumVersion": "1.1.0"
 }
