@@ -156,8 +156,54 @@
           ]
         }
       }
+    },
+    "1.4.0": {
+      "publishedAt": "2026-08-09T17:31:45.555Z",
+      "sizeMb": 96,
+      "mandatory": true,
+      "notes": {
+        "en": {
+          "new": [
+            "Setup can be walked backwards. There is a back arrow in the title bar, opposite the close button, on every step but the first.",
+            "SpaleVoice finally looks like itself in the taskbar and in Task Manager, with its own icon and its own name instead of Electron's."
+          ],
+          "fixed": [
+            "Without a licence the program now stays shut. Listening, the floating cloud and the settings are held back until you sign in — and signing in, sending a suggestion and reporting a problem stay reachable the whole time.",
+            "The licence panel said ACCOUNT.STATUS.SIGNED_OUT where a sentence belonged, and painted \"not signed in\" red as though something had broken."
+          ],
+          "gone": [
+            "Being able to close the setup window and use the rest of the program anyway."
+          ]
+        },
+        "sr": {
+          "new": [
+            "Kroz podešavanje se sada može i unazad. Strelica je u naslovnoj traci, naspram dugmeta za zatvaranje, na svakom koraku osim prvog.",
+            "SpaleVoice konačno izgleda kao svoj u taskbaru i u Task Manageru — sopstvena ikonica i sopstveno ime, umesto Electronovog."
+          ],
+          "fixed": [
+            "Bez licence program sada stoji zatvoren. Slušanje, plutajući oblak i podešavanja čekaju da se prijavite — a prijava, slanje predloga i prijava problema ostaju dostupni sve vreme.",
+            "U panelu licence je pisalo ACCOUNT.STATUS.SIGNED_OUT umesto rečenice, a „niste prijavljeni\" je bilo crveno kao da se nešto pokvarilo."
+          ],
+          "gone": [
+            "Mogućnost da zatvorite prozor za podešavanje pa ipak koristite ostatak programa."
+          ]
+        },
+        "zh": {
+          "new": [
+            "设置流程现在可以往回走。标题栏里有一个返回箭头，与关闭按钮相对，除第一步外每一步都有。",
+            "SpaleVoice 在任务栏和任务管理器里终于是它自己了——自己的图标和名称，不再是 Electron 的。"
+          ],
+          "fixed": [
+            "没有授权时，程序现在是锁住的。听写、悬浮气泡和设置都要等你登录之后才开放——而登录、提交建议和反馈问题始终可用。",
+            "授权面板本该显示一句话，却显示成 ACCOUNT.STATUS.SIGNED_OUT，并且把「未登录」标成红色，像是出了故障。"
+          ],
+          "gone": [
+            "关掉设置窗口之后照样使用其余功能的做法。"
+          ]
+        }
+      }
     }
   },
-  "latest": "1.3.0",
-  "minimumVersion": "1.1.0"
+  "latest": "1.4.0",
+  "minimumVersion": "1.4.0"
 }
