@@ -82,8 +82,45 @@
           ]
         }
       }
+    },
+    "1.2.0": {
+      "publishedAt": "2026-08-09T15:29:07.423Z",
+      "sizeMb": 96,
+      "mandatory": false,
+      "notes": {
+        "en": {
+          "new": [
+            "If SpaleVoice ever falls over, it now asks what you were doing and lets you leave an email, so there is a way to write back to you.",
+            "You can report a problem at any time from the tray menu, even when nothing has crashed.",
+            "A report that cannot be sent — no internet, say — is kept and offered again next time you open the app, so it is never lost."
+          ],
+          "fixed": [
+            "When the part of the app that listens to your microphone died, dictation just quietly stopped working until you restarted. Now you are told."
+          ]
+        },
+        "sr": {
+          "new": [
+            "Ako se SpaleVoice sruši, sada vas pita šta ste radili i možete ostaviti imejl, pa ima načina da vam se odgovori.",
+            "Problem možete prijaviti kad god hoćete iz menija u sistemskoj traci, i kada se ništa nije srušilo.",
+            "Prijava koja ne može da se pošalje — recimo bez interneta — čuva se i biće ponuđena sledeći put kad otvorite program, tako da se ne gubi."
+          ],
+          "fixed": [
+            "Kada bi otkazao deo programa koji sluša mikrofon, diktiranje bi samo tiho prestalo da radi dok ne restartujete. Sada vam se javi."
+          ]
+        },
+        "zh": {
+          "new": [
+            "如果 SpaleVoice 崩溃了，它现在会问你当时在做什么，你也可以留下邮箱，这样我们能回复你。",
+            "任何时候都可以从托盘菜单反馈问题，即使什么都没崩溃。",
+            "发不出去的报告（比如没网）会被保留，下次打开时再次提示，不会丢失。"
+          ],
+          "fixed": [
+            "以前负责听麦克风的那部分一旦出问题，口述就会悄无声息地失效，直到你重启。现在它会告诉你。"
+          ]
+        }
+      }
     }
   },
-  "latest": "1.1.1",
+  "latest": "1.2.0",
   "minimumVersion": "1.1.0"
 }
