@@ -224,6 +224,20 @@
 
   footer { padding: 34px 0 46px; font-family: var(--mono); font-size: 11px; letter-spacing: .1em; color: var(--ink-dim); }
   footer p { margin: 0 0 6px; }
+
+/* What changed, pulled from the same file the app reads. */
+.whatsnew { padding-top: 8px }
+.whatsnew h2 { font-size: 1.1rem; margin: 0 0 14px }
+.nn-group { margin-bottom: 16px }
+.nn-group h3 {
+  font-size: .72rem; letter-spacing: .16em; text-transform: uppercase;
+  margin: 0 0 6px; font-weight: 600;
+}
+.nn-new h3   { color: #6FC28C }
+.nn-fixed h3 { color: #FFB02E }
+.nn-gone h3  { color: var(--dim, #8b9098) }
+.whatsnew ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 5px }
+.whatsnew li { font-size: .92rem; line-height: 1.55 }
 </style>
 
 <div class="band">
@@ -362,11 +376,13 @@
     </ul>
 
     <div class="hash">
-      <span class="label">SHA-256 · SpaleVoice-Setup-1.0.0.exe</span>
-      <code id="sha">f8b136212670f68d707411e7984ee1dd94bb68da6408ce90b9652ca6a0d380e2</code>
+      <section class="whatsnew inner" id="whatsnew" hidden></section>
+
+      <span class="label">SHA-256 · <span data-version>SpaleVoice-Setup-1.1.0.exe</span></span>
+      <code id="sha">see the release page</code>
       <p class="how">
         To check the file you downloaded is the file that was published, run
-        <kbd>Get-FileHash SpaleVoice-Setup-1.0.0.exe</kbd> in PowerShell and
+        <kbd data-version>Get-FileHash SpaleVoice-Setup-1.1.0.exe</kbd> in PowerShell and
         compare. They should match exactly.
       </p>
     </div>
@@ -414,15 +430,73 @@
 </footer>
 
 <script>
-  // The one thing that changes between releases lives here.
-  const RELEASE = {
-    url: "https://github.com/spixyy7/spalevoice-releases/releases/download/v1.0.0/SpaleVoice-Setup-1.0.0.exe",
-    sizeMB: 95,
+  // The page reads the same file the app reads. That is the point: publishing a
+  // release updates update-policy.json, and this page follows without anyone
+  // remembering to edit it. The baked values below are only the fallback for a
+  // fetch that fails.
+  const FALLBACK = {
+    version: "1.1.0",
+    sizeMB: 96,
+    url: "https://github.com/spixyy7/spalevoice-releases/releases/download/v1.1.0/SpaleVoice-Setup-1.1.0.exe",
   };
 
-  const link = document.getElementById("download");
-  link.href = RELEASE.url;
-  document.getElementById("meta").textContent = RELEASE.sizeMB + " MB · Windows 10 / 11";
+  const LABELS = { new: "New", fixed: "Fixed", gone: "Gone" };
+
+  function paint(version, sizeMB, notes) {
+    const url = "https://github.com/spixyy7/spalevoice-releases/releases/download/v"
+      + version + "/SpaleVoice-Setup-" + version + ".exe";
+    document.getElementById("download").href = url;
+    document.getElementById("meta").textContent = sizeMB + " MB · Windows 10 / 11";
+    document.querySelectorAll(".ver").forEach(function (el) {
+      el.textContent = "v" + version + " · Windows";
+    });
+    document.querySelectorAll("[data-version]").forEach(function (el) {
+      el.textContent = el.textContent.replace(/\d+\.\d+\.\d+/g, version);
+    });
+
+    // What changed, from the same notes the app shows. Skipped entirely when
+    // there are none — an empty heading is worse than no section.
+    const host = document.getElementById("whatsnew");
+    if (!host || !notes) return;
+    const groups = ["new", "fixed", "gone"].filter(function (k) {
+      return notes[k] && notes[k].length;
+    });
+    if (!groups.length) return;
+
+    host.innerHTML = "";
+    const h = document.createElement("h2");
+    h.textContent = "What's new in " + version;
+    host.appendChild(h);
+    groups.forEach(function (k) {
+      const wrap = document.createElement("div");
+      wrap.className = "nn-group nn-" + k;
+      const label = document.createElement("h3");
+      label.textContent = LABELS[k];
+      wrap.appendChild(label);
+      const ul = document.createElement("ul");
+      notes[k].forEach(function (line) {
+        const li = document.createElement("li");
+        li.textContent = line;
+        ul.appendChild(li);
+      });
+      wrap.appendChild(ul);
+      host.appendChild(wrap);
+    });
+    host.hidden = false;
+  }
+
+  paint(FALLBACK.version, FALLBACK.sizeMB, null);
+
+  fetch("update-policy.json?t=" + Date.now())
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (policy) {
+      if (!policy || !policy.latest) return;
+      const rel = (policy.releases || {})[policy.latest] || {};
+      const notes = (rel.notes || {}).en;
+      paint(policy.latest, rel.sizeMb || FALLBACK.sizeMB, notes);
+    })
+    .catch(function () { /* the baked fallback is already on screen */ });
 </script>
 </body>
 </html>
+
