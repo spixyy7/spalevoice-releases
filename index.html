@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpaleVoice — dictation for Windows</title>
+<meta name="description" content="Hold a key and talk. What you say is typed into whatever window you are already in — Serbian, English or Mandarin.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="SpaleVoice">
+<meta property="og:description" content="Hold a key and talk. What you say is typed into whatever window you are already in.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text y='19' font-size='19'>%F0%9F%8E%99</text></svg>">
+
+<!--
+  The app has a design language already — graphite chassis, hairline rules, ink
+  for emphasis, mono for anything the machine says about itself, and amber
+  reserved for one thing only: live audio. This page is built in it rather than
+  around it, so the download looks like the thing being downloaded.
+-->
+
+</head>
+<body>
+<style>
+  :root {
+    /* Light: the app's own paper theme. */
+    --chassis:   #EDEDEA;
+    --panel:     #F6F6F3;
+    --ink:       #16181C;
+    --ink-dim:   #5C616B;
+    --rule:      #DCDDD9;
+    --rule-soft: #E7E8E4;
+    /* Amber means the microphone is open. It appears in exactly one place. */
+    --signal:    #B26B00;
+    --shadow:    rgba(20, 22, 26, .08);
+
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: ui-monospace, "Cascadia Code", "SF Mono", Consolas, "DejaVu Sans Mono", monospace;
+
+    --gutter: clamp(20px, 5vw, 64px);
+    --measure: 62ch;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --chassis:   #14161A;
+      --panel:     #191C21;
+      --ink:       #F1F2F4;
+      --ink-dim:   #A2A6AE;
+      --rule:      #31353C;
+      --rule-soft: #24272D;
+      --signal:    #F0A03C;
+      --shadow:    rgba(0, 0, 0, .4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --chassis:   #14161A;
+    --panel:     #191C21;
+    --ink:       #F1F2F4;
+    --ink-dim:   #A2A6AE;
+    --rule:      #31353C;
+    --rule-soft: #24272D;
+    --signal:    #F0A03C;
+    --shadow:    rgba(0, 0, 0, .4);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--chassis);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--ink); color: var(--chassis); }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 2px; }
+
+  .band { border-bottom: 1px solid var(--rule); }
+  .inner { max-width: 1080px; margin: 0 auto; padding: 0 var(--gutter); }
+
+  /* ── the readout, exactly like the app's top tier ── */
+  .readout {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 0; font-family: var(--mono);
+    font-size: 11px; letter-spacing: .24em; text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+  .readout .mark { width: 22px; height: 22px; flex: 0 0 auto; color: var(--ink); }
+  .readout .spacer { margin-left: auto; }
+  .readout .ver { color: var(--ink); }
+
+  /* ── hero ── */
+  .hero { padding: clamp(48px, 9vw, 104px) 0 clamp(40px, 7vw, 80px); }
+  .hero-grid { display: grid; grid-template-columns: 1fr; gap: clamp(32px, 5vw, 56px); align-items: center; }
+  @media (min-width: 860px) { .hero-grid { grid-template-columns: 1.25fr .75fr; } }
+
+  h1 {
+    margin: 0 0 18px;
+    font-size: clamp(38px, 7vw, 68px);
+    line-height: 1.02;
+    letter-spacing: -.035em;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+  h1 .quiet { color: var(--ink-dim); font-weight: 300; }
+  .lede { margin: 0; max-width: var(--measure); font-size: clamp(16px, 2vw, 19px); color: var(--ink-dim); }
+
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 30px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 24px; border-radius: 5px; text-decoration: none;
+    font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+    border: 1px solid var(--ink); background: var(--ink); color: var(--chassis);
+    transition: transform 140ms ease, box-shadow 140ms ease;
+  }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 18px var(--shadow); }
+  .btn.ghost { background: transparent; color: var(--ink); border-color: var(--rule); }
+  .btn.ghost:hover { border-color: var(--ink-dim); }
+  .cta-note { font-family: var(--mono); font-size: 11px; color: var(--ink-dim); letter-spacing: .06em; }
+
+  /* ── the bubble, drawn rather than screenshotted ── */
+  .stage { display: grid; place-items: center; min-height: 240px; }
+  .bubble {
+    position: relative; width: 168px; height: 168px; border-radius: 50%;
+    background: var(--panel); border: 1px solid var(--rule);
+    display: grid; place-items: center;
+    box-shadow: 0 18px 50px var(--shadow);
+  }
+  .bars { display: flex; align-items: center; gap: 5px; height: 54px; }
+  .bars i {
+    display: block; width: 5px; border-radius: 3px;
+    background: var(--signal); height: 8px;
+    animation: talk 1.5s ease-in-out infinite;
+  }
+  .bars i:nth-child(1) { animation-delay: 0s;    }
+  .bars i:nth-child(2) { animation-delay: .18s;  }
+  .bars i:nth-child(3) { animation-delay: .36s;  }
+  .bars i:nth-child(4) { animation-delay: .12s;  }
+  .bars i:nth-child(5) { animation-delay: .3s;   }
+  @keyframes talk {
+    0%, 100% { height: 8px;  opacity: .55; }
+    50%      { height: 44px; opacity: 1;   }
+  }
+  .bubble-cap {
+    position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);
+    font-family: var(--mono); font-size: 10px; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--ink-dim); white-space: nowrap;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .bars i { animation: none; height: 26px; }
+  }
+
+  /* ── sections ── */
+  section { padding: clamp(44px, 6vw, 76px) 0; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .26em;
+    text-transform: uppercase; color: var(--ink-dim); margin: 0 0 22px;
+  }
+  h2 { margin: 0 0 10px; font-size: clamp(24px, 3.4vw, 32px); letter-spacing: -.02em; text-wrap: balance; }
+  .sub { margin: 0 0 34px; color: var(--ink-dim); max-width: var(--measure); }
+
+  .grid { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
+  @media (min-width: 700px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .grid.three { grid-template-columns: repeat(3, 1fr); } }
+  .cell { background: var(--chassis); padding: 24px 22px; }
+  .cell h3 { margin: 0 0 7px; font-size: 16px; letter-spacing: -.01em; }
+  .cell p { margin: 0; font-size: 14.5px; color: var(--ink-dim); }
+  .cell .tick {
+    display: block; width: 16px; height: 16px; margin-bottom: 12px; color: var(--ink);
+  }
+
+  /* ── price table ── */
+  .rates { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .rates caption { text-align: left; color: var(--ink-dim); font-size: 14px; padding-bottom: 14px; }
+  .rates th, .rates td { text-align: left; padding: 13px 14px; border-bottom: 1px solid var(--rule-soft); }
+  .rates th { font-family: var(--mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-dim); font-weight: 400; }
+  .rates td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+  .rates tr.pick td { font-weight: 600; }
+  .rates tr.pick td:first-child::after {
+    content: "recommended"; margin-left: 10px; font-family: var(--mono);
+    font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--ink-dim); font-weight: 400;
+  }
+  .table-wrap { overflow-x: auto; }
+
+  /* ── security ── */
+  .facts { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; max-width: var(--measure); }
+  .facts li { display: grid; grid-template-columns: 18px 1fr; gap: 12px; font-size: 15px; color: var(--ink-dim); }
+  .facts strong { color: var(--ink); font-weight: 600; }
+  .facts svg { width: 16px; height: 16px; margin-top: 4px; color: var(--ink); }
+  .hash {
+    margin-top: 26px; padding: 16px 18px; border: 1px solid var(--rule); border-radius: 6px;
+    background: var(--panel);
+  }
+  .hash .label { font-family: var(--mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-dim); }
+  .hash code {
+    display: block; margin-top: 8px; font-family: var(--mono); font-size: 12.5px;
+    word-break: break-all; color: var(--ink);
+  }
+  .hash .how { margin: 12px 0 0; font-size: 13px; color: var(--ink-dim); }
+  .hash .how kbd {
+    font-family: var(--mono); font-size: 12px; background: var(--chassis);
+    border: 1px solid var(--rule); border-radius: 3px; padding: 1px 6px;
+  }
+
+  .warn {
+    margin-top: 26px; padding: 16px 18px; border: 1px solid var(--rule);
+    border-left: 3px solid var(--signal); border-radius: 6px; background: var(--panel);
+    max-width: var(--measure); font-size: 14.5px; color: var(--ink-dim);
+  }
+  .warn strong { color: var(--ink); }
+
+  /* ── steps ── */
+  .steps { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; gap: 20px; max-width: var(--measure); }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: 30px 1fr; gap: 14px; }
+  .steps li::before {
+    content: counter(s, decimal-leading-zero);
+    font-family: var(--mono); font-size: 11px; letter-spacing: .1em;
+    color: var(--ink-dim); padding-top: 4px;
+  }
+  .steps h3 { margin: 0 0 4px; font-size: 16px; }
+  .steps p { margin: 0; font-size: 14.5px; color: var(--ink-dim); }
+
+  footer { padding: 34px 0 46px; font-family: var(--mono); font-size: 11px; letter-spacing: .1em; color: var(--ink-dim); }
+  footer p { margin: 0 0 6px; }
+</style>
+
+<div class="band">
+  <div class="inner readout">
+    <svg class="mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 3v10M12 3c-2.2 0-3.4 1.2-3.4 2.9 0 3.6 6.8 2.2 6.8 5.8 0 1.9-1.5 3.1-3.4 3.1"
+            stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    </svg>
+    <span>SpaleVoice</span>
+    <span class="spacer"></span>
+    <span class="ver">v1.0.0 · Windows</span>
+  </div>
+</div>
+
+<div class="band">
+  <div class="inner hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Speak.<br><span class="quiet">It types.</span></h1>
+        <p class="lede">
+          Hold a key and talk. Whatever you say is written into whatever window
+          you are already in — the editor, the chat box, the search bar. Serbian,
+          English and Chinese, each in its own script.
+        </p>
+        <div class="cta-row">
+          <a class="btn" id="download" href="#" download>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 19h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Download for Windows
+          </a>
+          <span class="cta-note" id="meta">95 MB · Windows 10 / 11</span>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="bubble" role="img" aria-label="The floating microphone bubble, listening">
+          <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <span class="bubble-cap">listening</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="band">
+  <section class="inner">
+    <p class="eyebrow">What it does</p>
+    <h2>A microphone key for the whole computer</h2>
+    <p class="sub">
+      It runs in the tray and stays out of the way until you press the key.
+      There is no window to switch to and nothing to paste.
+    </p>
+
+    <div class="grid three">
+      <div class="cell">
+        <svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v10m0 0a3 3 0 0 0 3-3V7a3 3 0 1 0-6 0v4a3 3 0 0 0 3 3Zm-7 1a7 7 0 0 0 14 0M12 17v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <h3>Types where you are</h3>
+        <p>The transcript goes straight into the focused field. Or to the clipboard, or into a popup first — your choice.</p>
+      </div>
+      <div class="cell">
+        <svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <h3>Three languages, one key</h3>
+        <p>Serbian, English and Mandarin. On Auto it writes whichever you actually spoke, in that language's own script.</p>
+      </div>
+      <div class="cell">
+        <svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <h3>Knows when you stopped</h3>
+        <p>It cuts at your pauses and sends only speech, so silence is never uploaded and never billed.</p>
+      </div>
+      <div class="cell">
+        <svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 21h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <h3>Lives on any screen</h3>
+        <p>A small floating bubble shows what it is hearing. Drag it to whichever monitor you like; it stays there.</p>
+      </div>
+      <div class="cell">
+        <svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 4h9l3 3v13H6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12h6M9 16h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <h3>Remembers what it wrote</h3>
+        <p>A local history of everything dictated, and a running total of what it has cost you this month.</p>
+      </div>
+      <div class="cell">
+        <svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <h3>Your key, your account</h3>
+        <p>You paste your own API key. It is saved on this computer and nowhere else, and every charge is on your own account.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="band">
+  <section class="inner">
+    <p class="eyebrow">What it costs</p>
+    <h2>Nothing to buy. You pay the transcription service directly.</h2>
+    <p class="sub">
+      Per hour of actual speech — a heavy day of dictating is roughly ninety
+      minutes of it, so most people spend a few dollars a month.
+    </p>
+    <div class="table-wrap">
+      <table class="rates">
+        <caption>Choose in the app; switch whenever you like.</caption>
+        <thead>
+          <tr><th scope="col">Model</th><th scope="col">Best at</th><th scope="col" style="text-align:right">Per hour</th></tr>
+        </thead>
+        <tbody>
+          <tr class="pick"><td>GPT Transcribe</td><td>Everything, safely</td><td class="num">$0.27</td></tr>
+          <tr><td>ElevenLabs Scribe v2</td><td>Serbian</td><td class="num">$0.22</td></tr>
+          <tr><td>GPT-4o Mini Transcribe</td><td>Speed and price</td><td class="num">$0.18</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<div class="band">
+  <section class="inner">
+    <p class="eyebrow">Before you install</p>
+    <h2>What this program does and does not do</h2>
+
+    <ul class="facts">
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span><strong>No key is included.</strong> The installer ships without any credentials. You enter your own on first run and it is written only to your computer.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span><strong>There is no server in the middle.</strong> Audio goes from your machine to the transcription service you picked, and nowhere else. No account, no telemetry, no analytics.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span><strong>The microphone opens only when you press the key.</strong> The bubble shows amber whenever it is listening, and nothing is recorded between presses.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span><strong>Updates ask first.</strong> It checks for a newer version on its own but downloads nothing until you say yes, and installs only when you close it.</span>
+      </li>
+    </ul>
+
+    <div class="hash">
+      <span class="label">SHA-256 · SpaleVoice-Setup-1.0.0.exe</span>
+      <code id="sha">f8b136212670f68d707411e7984ee1dd94bb68da6408ce90b9652ca6a0d380e2</code>
+      <p class="how">
+        To check the file you downloaded is the file that was published, run
+        <kbd>Get-FileHash SpaleVoice-Setup-1.0.0.exe</kbd> in PowerShell and
+        compare. They should match exactly.
+      </p>
+    </div>
+
+    <div class="warn">
+      <strong>Windows will warn you.</strong> This build is not code-signed — a
+      certificate costs a few hundred dollars a year and this is a tool made for
+      a handful of people. SmartScreen will say “unrecognised app”. Click
+      <em>More info</em> → <em>Run anyway</em>. Verify the hash above first if
+      you would rather be sure.
+    </div>
+  </section>
+</div>
+
+<div class="band">
+  <section class="inner">
+    <p class="eyebrow">Getting started</p>
+    <h2>Four minutes, once</h2>
+    <ol class="steps">
+      <li>
+        <div>
+          <h3>Install and open it</h3>
+          <p>It puts an icon in the tray and asks which language you want the app itself to speak.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Paste an API key</h3>
+          <p>Make one at openrouter.ai — it works with every model except Scribe, which has its own. The app shows you what each costs before you choose.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Press the key and talk</h3>
+          <p>Default is Ctrl + Alt + K, changeable. Press once to start, once to stop; or hold it while you speak.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+</div>
+
+<footer class="inner">
+  <p>SpaleVoice · made by Spasoje Pavlović</p>
+  <p>Private software. Please do not pass the installer on.</p>
+</footer>
+
+<script>
+  // The one thing that changes between releases lives here.
+  const RELEASE = {
+    url: "https://github.com/spixyy7/spalevoice-releases/releases/download/v1.0.0/SpaleVoice-Setup-1.0.0.exe",
+    sizeMB: 95,
+  };
+
+  const link = document.getElementById("download");
+  link.href = RELEASE.url;
+  document.getElementById("meta").textContent = RELEASE.sizeMB + " MB · Windows 10 / 11";
+</script>
+</body>
+</html>
