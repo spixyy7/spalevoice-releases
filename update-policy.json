@@ -520,8 +520,42 @@
           "gone": []
         }
       }
+    },
+    "1.9.3": {
+      "publishedAt": "2026-08-10T07:06:03.874Z",
+      "sizeMb": 96,
+      "mandatory": true,
+      "notes": {
+        "en": {
+          "new": [
+            "See which computers are using your licence, and remove one yourself. One a month — enough for a reinstall or a new laptop."
+          ],
+          "fixed": [
+            "Signing out now closes SpaleVoice properly instead of leaving the settings open and usable."
+          ],
+          "gone": []
+        },
+        "sr": {
+          "new": [
+            "Vidite koji računari koriste vašu licencu i sami sklonite jedan. Jedan mesečno — dovoljno za reinstalaciju ili novi laptop."
+          ],
+          "fixed": [
+            "Odjava sada zaista zatvara SpaleVoice, umesto da ostavi podešavanja otvorena i upotrebljiva."
+          ],
+          "gone": []
+        },
+        "zh": {
+          "new": [
+            "查看哪些电脑在使用你的授权，并自行移除其中一台。每月一次——足够应付重装系统或换新笔记本。"
+          ],
+          "fixed": [
+            "退出登录现在会真正关闭 SpaleVoice，而不是让设置窗口继续开着并可用。"
+          ],
+          "gone": []
+        }
+      }
     }
   },
-  "latest": "1.9.2",
-  "minimumVersion": "1.9.2"
+  "latest": "1.9.3",
+  "minimumVersion": "1.9.3"
 }
