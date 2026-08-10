@@ -492,8 +492,36 @@
           "gone": []
         }
       }
+    },
+    "1.9.2": {
+      "publishedAt": "2026-08-10T06:36:54.845Z",
+      "sizeMb": 96,
+      "mandatory": true,
+      "notes": {
+        "en": {
+          "new": [],
+          "fixed": [
+            "Updating no longer asks where to install. It installs where SpaleVoice already is and reopens itself."
+          ],
+          "gone": []
+        },
+        "sr": {
+          "new": [],
+          "fixed": [
+            "Ažuriranje više ne pita gde da instalira. Instalira se tamo gde SpaleVoice već stoji i samo se ponovo otvori."
+          ],
+          "gone": []
+        },
+        "zh": {
+          "new": [],
+          "fixed": [
+            "更新不再询问安装位置。它会装在 SpaleVoice 原本所在的位置，并自动重新打开。"
+          ],
+          "gone": []
+        }
+      }
     }
   },
-  "latest": "1.9.1",
-  "minimumVersion": "1.9.1"
+  "latest": "1.9.2",
+  "minimumVersion": "1.9.2"
 }
