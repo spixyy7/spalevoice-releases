@@ -464,8 +464,36 @@
           "gone": []
         }
       }
+    },
+    "1.9.1": {
+      "publishedAt": "2026-08-10T06:30:11.725Z",
+      "sizeMb": 96,
+      "mandatory": true,
+      "notes": {
+        "en": {
+          "new": [],
+          "fixed": [
+            "Confirming your email now asks for the six-digit code, instead of a licence key you do not need."
+          ],
+          "gone": []
+        },
+        "sr": {
+          "new": [],
+          "fixed": [
+            "Potvrda imejla sada traži šestocifreni kod, umesto licencnog ključa koji vam ne treba."
+          ],
+          "gone": []
+        },
+        "zh": {
+          "new": [],
+          "fixed": [
+            "确认邮箱时现在要求输入六位验证码，而不是你并不需要的授权密钥。"
+          ],
+          "gone": []
+        }
+      }
     }
   },
-  "latest": "1.9.0",
-  "minimumVersion": "1.8.1"
+  "latest": "1.9.1",
+  "minimumVersion": "1.9.1"
 }
