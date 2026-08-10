@@ -582,8 +582,51 @@
           "gone": []
         }
       }
+    },
+    "1.10.0": {
+      "publishedAt": "2026-08-10T07:27:03.665Z",
+      "sizeMb": 96,
+      "mandatory": true,
+      "notes": {
+        "en": {
+          "new": [
+            "A new computer asks before it joins your licence. You get a code by email, and you can see how many places are taken before you decide.",
+            "Once a month SpaleVoice checks it is still you. One code, ten seconds, and only on computers left signed in.",
+            "\"Keep me signed in\" — leave it off on a computer that is not yours and SpaleVoice forgets you when it closes.",
+            "Remove a computer you no longer use, from inside the app. Twice a month, which covers a reinstall or a new laptop."
+          ],
+          "fixed": [],
+          "gone": [
+            "Computers quietly adding themselves to your licence without asking."
+          ]
+        },
+        "sr": {
+          "new": [
+            "Novi računar pita pre nego što se doda na vašu licencu. Kod stiže na mejl, a pre odluke vidite koliko je mesta zauzeto.",
+            "Jednom mesečno SpaleVoice proveri da ste to i dalje vi. Jedan kod, deset sekundi, i to samo na računarima koji ostaju prijavljeni.",
+            "„Ostani prijavljen\" — isključite na tuđem računaru i SpaleVoice vas zaboravi čim se zatvori.",
+            "Sklonite računar koji više ne koristite, iz same aplikacije. Dvaput mesečno, što pokriva reinstalaciju ili novi laptop."
+          ],
+          "fixed": [],
+          "gone": [
+            "Računari koji su se tiho dodavali na vašu licencu bez pitanja."
+          ]
+        },
+        "zh": {
+          "new": [
+            "新电脑加入你的授权前会先询问。验证码发到邮箱，决定之前你能看到已占用几个名额。",
+            "每月一次，SpaleVoice 确认仍是你本人。一个验证码，十秒钟，只针对保持登录的电脑。",
+            "「保持登录」——在不属于你的电脑上关掉它，SpaleVoice 关闭时就会忘记你。",
+            "在应用内移除不再使用的电脑。每月两次，足够应付重装或换新笔记本。"
+          ],
+          "fixed": [],
+          "gone": [
+            "电脑不经询问就悄悄加入你的授权。"
+          ]
+        }
+      }
     }
   },
-  "latest": "1.9.4",
-  "minimumVersion": "1.9.4"
+  "latest": "1.10.0",
+  "minimumVersion": "1.10.0"
 }
