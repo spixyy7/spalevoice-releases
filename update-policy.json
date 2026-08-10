@@ -656,8 +656,45 @@
           "gone": []
         }
       }
+    },
+    "1.10.2": {
+      "publishedAt": "2026-08-10T08:00:43.479Z",
+      "sizeMb": 96,
+      "mandatory": true,
+      "notes": {
+        "en": {
+          "new": [
+            "The licence pane says which licence you are using. Entering a different key shows you what you gain and what you give up, and asks before it changes anything.",
+            "If the recorder ever dies, SpaleVoice brings it back by itself instead of going quiet until you restart it."
+          ],
+          "fixed": [
+            "Closing SpaleVoice is no longer reported as a crash, however it is closed."
+          ],
+          "gone": []
+        },
+        "sr": {
+          "new": [
+            "Panel licence sada piše koju licencu koristite. Kad unesete drugi ključ, prvo vidite šta dobijate a šta gubite, pa se tek onda pita.",
+            "Ako snimač ikad otkaže, SpaleVoice ga sam vrati umesto da ućuti dok ga ne restartujete."
+          ],
+          "fixed": [
+            "Zatvaranje SpaleVoice-a se više ne prijavljuje kao pad, na koji god način da se zatvori."
+          ],
+          "gone": []
+        },
+        "zh": {
+          "new": [
+            "授权面板会显示你正在使用哪一个授权。输入另一个密钥时，会先告诉你得到什么、失去什么，然后才询问是否更换。",
+            "录音组件万一停止工作，SpaleVoice 会自行恢复，而不是一直沉默到你重启。"
+          ],
+          "fixed": [
+            "关闭 SpaleVoice 不再被报告为崩溃，无论以何种方式关闭。"
+          ],
+          "gone": []
+        }
+      }
     }
   },
-  "latest": "1.10.1",
-  "minimumVersion": "1.10.1"
+  "latest": "1.10.2",
+  "minimumVersion": "1.10.2"
 }
