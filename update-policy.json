@@ -424,8 +424,48 @@
           "gone": []
         }
       }
+    },
+    "1.9.0": {
+      "publishedAt": "2026-08-10T06:23:32.714Z",
+      "sizeMb": 96,
+      "mandatory": false,
+      "notes": {
+        "en": {
+          "new": [
+            "Put a picture on your account. It follows you to every app you sign in to with it.",
+            "Reporting a problem? Attach a screenshot. \"It looked like this\" says more than a paragraph, and the picture is encrypted before it leaves your computer.",
+            "Skipped a few versions? The update now lists everything you are getting, not only the newest release."
+          ],
+          "fixed": [
+            "An account that has not confirmed its address can no longer keep using SpaleVoice on an old session."
+          ],
+          "gone": []
+        },
+        "sr": {
+          "new": [
+            "Stavite sliku na nalog. Prati vas u svaku aplikaciju u koju se njime prijavite.",
+            "Prijavljujete problem? Zakačite sliku ekrana. „Ovako je izgledalo\" kaže više od pasusa, a slika se šifruje pre nego što napusti vaš računar.",
+            "Preskočili ste par verzija? Ažuriranje sada nabraja sve što dobijate, ne samo poslednje izdanje."
+          ],
+          "fixed": [
+            "Nalog koji nije potvrdio adresu više ne može da nastavi da koristi SpaleVoice na staroj sesiji."
+          ],
+          "gone": []
+        },
+        "zh": {
+          "new": [
+            "给账户设置头像。你用它登录的每个应用都会显示同一张。",
+            "反馈问题时可以附上截图。「当时是这样」胜过一整段描述，而且图片在离开你的电脑之前就已加密。",
+            "跳过了几个版本？更新现在会列出你将获得的全部内容，而不只是最新一版。"
+          ],
+          "fixed": [
+            "未确认邮箱地址的账户，不能再凭旧会话继续使用 SpaleVoice。"
+          ],
+          "gone": []
+        }
+      }
     }
   },
-  "latest": "1.8.2",
+  "latest": "1.9.0",
   "minimumVersion": "1.8.1"
 }
