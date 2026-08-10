@@ -432,7 +432,7 @@
       "notes": {
         "en": {
           "new": [
-            "Put a picture on your account. It follows you to every app you sign in to with it.",
+            "Put a picture on your account. It shows up in every Spale program you sign in to.",
             "Reporting a problem? Attach a screenshot. \"It looked like this\" says more than a paragraph, and the picture is encrypted before it leaves your computer.",
             "Skipped a few versions? The update now lists everything you are getting, not only the newest release."
           ],
@@ -443,7 +443,7 @@
         },
         "sr": {
           "new": [
-            "Stavite sliku na nalog. Prati vas u svaku aplikaciju u koju se njime prijavite.",
+            "Stavite sliku na nalog. Vidi se u svakom Spale programu u koji se njime prijavite.",
             "Prijavljujete problem? Zakačite sliku ekrana. „Ovako je izgledalo\" kaže više od pasusa, a slika se šifruje pre nego što napusti vaš računar.",
             "Preskočili ste par verzija? Ažuriranje sada nabraja sve što dobijate, ne samo poslednje izdanje."
           ],
@@ -454,7 +454,7 @@
         },
         "zh": {
           "new": [
-            "给账户设置头像。你用它登录的每个应用都会显示同一张。",
+            "给账户设置头像。你登录的每一个 Spale 程序都会显示它。",
             "反馈问题时可以附上截图。「当时是这样」胜过一整段描述，而且图片在离开你的电脑之前就已加密。",
             "跳过了几个版本？更新现在会列出你将获得的全部内容，而不只是最新一版。"
           ],
