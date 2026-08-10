@@ -396,8 +396,36 @@
           "gone": []
         }
       }
+    },
+    "1.8.2": {
+      "publishedAt": "2026-08-10T06:03:15.686Z",
+      "sizeMb": 96,
+      "mandatory": false,
+      "notes": {
+        "en": {
+          "new": [],
+          "fixed": [
+            "The confirmation screen now sends the code it says it sent, so signing in to an unconfirmed account no longer waits on a button."
+          ],
+          "gone": []
+        },
+        "sr": {
+          "new": [],
+          "fixed": [
+            "Ekran za potvrdu sada zaista pošalje kod koji najavljuje, pa prijava na nepotvrđen nalog više ne čeka da pritisnete dugme."
+          ],
+          "gone": []
+        },
+        "zh": {
+          "new": [],
+          "fixed": [
+            "确认页面现在会真正发送它所说的验证码，登录未确认的账户不再需要先点按钮。"
+          ],
+          "gone": []
+        }
+      }
     }
   },
-  "latest": "1.8.1",
+  "latest": "1.8.2",
   "minimumVersion": "1.8.1"
 }
