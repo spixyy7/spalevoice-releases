@@ -365,8 +365,39 @@
           "gone": []
         }
       }
+    },
+    "1.8.1": {
+      "publishedAt": "2026-08-10T05:58:09.996Z",
+      "sizeMb": 96,
+      "mandatory": true,
+      "notes": {
+        "en": {
+          "new": [
+            "Accounts confirm their email address. A six-digit code arrives by email and you type it into SpaleVoice — no links, no browser.",
+            "Existing accounts confirm once as well, the next time they sign in."
+          ],
+          "fixed": [],
+          "gone": []
+        },
+        "sr": {
+          "new": [
+            "Nalozi sada potvrđuju imejl adresu. Šestocifreni kod stigne na mejl i ukucate ga u SpaleVoice — bez linkova i bez pregledača.",
+            "Postojeći nalozi to urade jednom, pri sledećoj prijavi."
+          ],
+          "fixed": [],
+          "gone": []
+        },
+        "zh": {
+          "new": [
+            "账户现在需要确认邮箱地址。六位验证码会发到邮箱，在 SpaleVoice 里输入即可——没有链接，也不用浏览器。",
+            "已有账户在下次登录时也确认一次。"
+          ],
+          "fixed": [],
+          "gone": []
+        }
+      }
     }
   },
-  "latest": "1.8.0",
-  "minimumVersion": "1.8.0"
+  "latest": "1.8.1",
+  "minimumVersion": "1.8.1"
 }
