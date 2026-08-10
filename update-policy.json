@@ -693,8 +693,51 @@
           "gone": []
         }
       }
+    },
+    "1.11.0": {
+      "publishedAt": "2026-08-10T14:54:43Z",
+      "sizeMb": 96,
+      "mandatory": true,
+      "notes": {
+        "en": {
+          "new": [
+            "Your licence and your account live in SpaleHub now — one place for every Spale program. Install SpaleHub, sign in there, and SpaleVoice unlocks itself.",
+            "Updates come through SpaleHub as well, so there is one thing to keep current instead of several."
+          ],
+          "fixed": [
+            "The update window could not be minimised."
+          ],
+          "gone": [
+            "The sign-in and licence screens inside SpaleVoice. They are in SpaleHub."
+          ]
+        },
+        "sr": {
+          "new": [
+            "Licenca i nalog su sada u SpaleHub-u — jedno mesto za sve Spale programe. Instalirajte SpaleHub, prijavite se tamo, i SpaleVoice se sam otključava.",
+            "Ažuriranja takođe idu kroz SpaleHub, pa se održava jedna stvar umesto više njih."
+          ],
+          "fixed": [
+            "Prozor za ažuriranje nije mogao da se minimizuje."
+          ],
+          "gone": [
+            "Ekrani za prijavu i licencu unutar SpaleVoice-a. Sada su u SpaleHub-u."
+          ]
+        },
+        "zh": {
+          "new": [
+            "您的授权和账户现在都在 SpaleHub 中 — 所有 Spale 程序共用一处。安装 SpaleHub 并登录，SpaleVoice 就会自动解锁。",
+            "更新也通过 SpaleHub 进行，只需保持一个程序为最新即可。"
+          ],
+          "fixed": [
+            "更新窗口无法最小化。"
+          ],
+          "gone": [
+            "SpaleVoice 内部的登录和授权界面，它们已移至 SpaleHub。"
+          ]
+        }
+      }
     }
   },
-  "latest": "1.10.2",
-  "minimumVersion": "1.10.2"
+  "latest": "1.11.0",
+  "minimumVersion": "1.11.0"
 }
