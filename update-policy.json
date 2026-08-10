@@ -625,8 +625,39 @@
           ]
         }
       }
+    },
+    "1.10.1": {
+      "publishedAt": "2026-08-10T07:42:41.499Z",
+      "sizeMb": 96,
+      "mandatory": true,
+      "notes": {
+        "en": {
+          "new": [],
+          "fixed": [
+            "Closing SpaleVoice is no longer mistaken for a crash. The crash window appears when something actually breaks.",
+            "Sending a report now sends the ones that were waiting behind it, so it does not keep asking again."
+          ],
+          "gone": []
+        },
+        "sr": {
+          "new": [],
+          "fixed": [
+            "Zatvaranje SpaleVoice-a se više ne shvata kao pad. Prozor za prijavu iskače kad se nešto stvarno pokvari.",
+            "Slanje prijave sada šalje i one koje su čekale iza nje, pa ne pita iznova."
+          ],
+          "gone": []
+        },
+        "zh": {
+          "new": [],
+          "fixed": [
+            "关闭 SpaleVoice 不再被误判为崩溃。崩溃窗口只在真正出问题时出现。",
+            "发送一份报告时，排在后面等待的报告会一并发出，不会再反复询问。"
+          ],
+          "gone": []
+        }
+      }
     }
   },
-  "latest": "1.10.0",
-  "minimumVersion": "1.10.0"
+  "latest": "1.10.1",
+  "minimumVersion": "1.10.1"
 }
