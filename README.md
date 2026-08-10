@@ -1,17 +1,20 @@
 # SpaleVoice — downloads
 
-This repository is not SpaleVoice. It holds three things and nothing else:
+This repository is **not** SpaleVoice. It holds three things and nothing else:
 
--  — the download page at
+- `index.html` — the download page at
   <https://spixyy7.github.io/spalevoice-releases/>
--  — what every installed copy reads to learn what
-  changed and which versions are still supported
-- the installers, attached to the latest release
+- `update-policy.json` — what every installed copy reads to learn what changed
+  and which versions are still supported
+- the installer, attached to the latest release
 
-**About the  on the releases page:** GitHub attaches that to
-every release automatically and it cannot be turned off. It is an archive of
-*this* repository — a web page and a JSON file, about 24 KB. SpaleVoice's own
-source is not here and is not public.
+### About the "Source code (zip)" on the releases page
 
-Only the newest release is kept. Older installers are removed rather than left
-downloadable, because an old copy is an old licence check.
+GitHub attaches that to every release automatically and it cannot be turned
+off. It is an archive of **this** repository — a web page and a JSON file,
+about 24 KB. SpaleVoice's own source is not here and is not public.
+
+### Only the newest release is kept
+
+Older installers are deleted rather than left downloadable. An old copy is an
+old licence check, and nobody should be able to reach for one by accident.
