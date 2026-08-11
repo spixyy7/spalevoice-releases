@@ -736,8 +736,42 @@
           ]
         }
       }
+    },
+    "1.11.2": {
+      "publishedAt": "2026-08-11T17:54:06.597Z",
+      "sizeMb": 96,
+      "mandatory": false,
+      "notes": {
+        "en": {
+          "new": [
+            "Both API keys have their own permanent field in Settings — OpenAI for GPT Transcribe, ElevenLabs for Scribe v2. Each is kept on its own, so switching between the two models never means typing a key again."
+          ],
+          "fixed": [
+            "The ElevenLabs key could only be entered while Scribe was already the selected model, so setting it meant switching model, pasting, and switching back."
+          ],
+          "gone": []
+        },
+        "sr": {
+          "new": [
+            "Oba API ključa imaju svoje stalno polje u podešavanjima — OpenAI za GPT Transcribe, ElevenLabs za Scribe v2. Svaki se čuva zasebno, pa prelazak sa jednog modela na drugi više ne znači ponovno kucanje ključa."
+          ],
+          "fixed": [
+            "ElevenLabs ključ se mogao uneti samo dok je Scribe već bio izabran model, pa je za njegovo postavljanje trebalo prebaciti model, nalepiti, pa vratiti nazad."
+          ],
+          "gone": []
+        },
+        "zh": {
+          "new": [
+            "两个 API 密钥在设置中各有固定的输入框——OpenAI 用于 GPT Transcribe，ElevenLabs 用于 Scribe v2。两者分别保存，在模型之间切换时不必再重新输入密钥。"
+          ],
+          "fixed": [
+            "以前只有在已经选中 Scribe 时才能填写 ElevenLabs 密钥，因此设置它需要先切换模型、粘贴，然后再切回来。"
+          ],
+          "gone": []
+        }
+      }
     }
   },
-  "latest": "1.11.1",
+  "latest": "1.11.2",
   "minimumVersion": "1.11.1"
 }
