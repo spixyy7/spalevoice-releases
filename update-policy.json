@@ -770,8 +770,36 @@
           "gone": []
         }
       }
+    },
+    "1.11.3": {
+      "publishedAt": "2026-08-11T19:35:34.860Z",
+      "sizeMb": 96,
+      "mandatory": false,
+      "notes": {
+        "en": {
+          "new": [
+            "SpaleVoice opens its window when it starts, not just the floating bubble — so the model, what you have spent and whether it is listening are there without hunting for them. If you have set it to launch minimized with Windows, it still comes up quietly."
+          ],
+          "fixed": [],
+          "gone": []
+        },
+        "sr": {
+          "new": [
+            "SpaleVoice pri pokretanju otvara i svoj prozor, ne samo plutajući bubble — pa su model, potrošnja i to da li sluša odmah pred tobom. Ako si podesio da se diže minimizovan uz Windows, i dalje se pokreće tiho."
+          ],
+          "fixed": [],
+          "gone": []
+        },
+        "zh": {
+          "new": [
+            "SpaleVoice 启动时会打开自己的窗口，而不只是悬浮气泡——模型、已用花费以及是否正在聆听都一目了然。如果你设置了随 Windows 最小化启动，它仍会安静地启动。"
+          ],
+          "fixed": [],
+          "gone": []
+        }
+      }
     }
   },
-  "latest": "1.11.2",
+  "latest": "1.11.3",
   "minimumVersion": "1.11.1"
 }
