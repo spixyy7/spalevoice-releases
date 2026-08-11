@@ -798,8 +798,57 @@
           "gone": []
         }
       }
+    },
+    "1.12.0": {
+      "publishedAt": "2026-08-11T20:26:11.328Z",
+      "sizeMb": 96,
+      "mandatory": false,
+      "notes": {
+        "en": {
+          "new": [
+            "Noise suppression is now SpaleVoice's own, with three settings instead of a switch. Off is raw audio and still the best a quiet room can give the model; Light takes out steady hum, fans and hiss; Strong is for a genuinely noisy room. It runs on the finished sentence, on your computer, and costs nothing.",
+            "A desk bump, a keyboard click or a cough no longer counts as something you said. SpaleVoice now listens in the band where speech actually lives, so noise stops opening the microphone — and anything that opens it without a word in it is thrown away before it is ever sent."
+          ],
+          "fixed": [
+            "Remove filler words no longer eats real words. It was deleting \"um\" out of Serbian sentences where it means mind, and \"ovaj\" where it means this — so \"ovaj čovek je došao\" came back missing its subject. Words that are only sometimes filler now go only when you actually paused around them.",
+            "Removing a filler no longer leaves the punctuation behind it. \"Um, I think so.\" used to become \", I think so.\" — a leading comma and a lowercase sentence. A phrase that was nothing but hesitation now types nothing at all, instead of a lone full stop.",
+            "A loud noise no longer leaves the microphone deaf. One cough used to raise the bar for what counted as speech and there was no way back down short of stopping and starting again."
+          ],
+          "gone": [
+            "The Mic noise suppression switch, which turned on the browser's own call-tuned processing. It was built to make a phone call intelligible, not to help a transcription model, and it cost accuracy either way it was set. If you had it on, you now have Light."
+          ]
+        },
+        "sr": {
+          "new": [
+            "Uklanjanje šuma je sada SpaleVoice-ovo sopstveno, sa tri nivoa umesto prekidača. Isključeno je sirov zvuk i i dalje najbolje što tiha soba može da da modelu; Blago skida stalan šum, ventilatore i šuštanje; Jako je za zaista bučnu sobu. Radi nad gotovom rečenicom, na tvom računaru, i ne košta ništa.",
+            "Udarac o sto, klik tastature ili kašalj više se ne računaju kao nešto što si rekao. SpaleVoice sada sluša u opsegu u kome govor zaista živi, pa šum više ne otvara mikrofon — a sve što ga otvori bez ijedne reči baca se pre nego što se uopšte pošalje."
+          ],
+          "fixed": [
+            "Uklanjanje poštapalica više ne jede prave reči. Brisalo je „um“ iz srpskih rečenica gde znači razum, i „ovaj“ gde je pokazna zamenica — pa se „ovaj čovek je došao“ vraćalo bez subjekta. Reči koje su samo ponekad poštapalice sada odlaze samo kad si oko njih stvarno zastao.",
+            "Uklanjanje poštapalice više ne ostavlja interpunkciju za sobom. „Ovaj, mislim da jeste.“ postajalo je „, mislim da jeste.“ — zarez na početku i mala slova. Iskaz koji je bio samo oklevanje sada ne ukuca ništa, umesto usamljene tačke.",
+            "Glasan zvuk više ne ostavlja mikrofon gluvim. Jedan kašalj je dizao prag za ono što se broji kao govor, i nije bilo povratka osim da zaustaviš i ponovo pokreneš."
+          ],
+          "gone": [
+            "Prekidač „Mic noise suppression“, koji je uključivao browser-ovu obradu pravljenu za pozive. Napravljena je da telefonski razgovor bude razgovetan, ne da pomogne modelu za prepoznavanje, i koštala je tačnosti kako god da je bila podešena. Ako si ga imao uključenog, sada imaš Blago."
+          ]
+        },
+        "zh": {
+          "new": [
+            "降噪现在由 SpaleVoice 自己完成，用三档取代了开关。关闭即原始音频，安静房间里这仍是能给模型的最好素材；轻度可去除稳定的嗡嗡声、风扇声和嘶声；强力用于确实嘈杂的房间。它在整句完成后于你的电脑上运行，不产生任何费用。",
+            "撞桌子、敲键盘或咳嗽不再被当作你说的话。SpaleVoice 现在只在语音真正存在的频段上聆听，噪音不再打开麦克风——任何打开了却没有一个词的片段，在发送之前就被丢弃。"
+          ],
+          "fixed": [
+            "移除口头禅不再吃掉真正的词。它曾从塞尔维亚语句子中删掉表示「心智」的 um，以及作指示代词的 ovaj，于是「ovaj čovek je došao」回来时少了主语。只有在你确实在其前后停顿时，那些有时才是口头禅的词才会被移除。",
+            "移除口头禅不再留下它身后的标点。「Um, I think so.」曾变成「, I think so.」——句首一个逗号加小写开头。整句只是犹豫时，现在什么都不会输入，而不是一个孤零零的句号。",
+            "巨大的声响不再让麦克风失聪。一次咳嗽曾抬高「算作语音」的门槛，除了停止再重新开始别无办法。"
+          ],
+          "gone": [
+            "「Mic noise suppression」开关，它启用的是浏览器为通话调校的处理。它的目标是让电话听得清楚，而不是帮助转录模型，无论开关如何设置都会损失准确度。如果你之前打开了它，现在你得到的是「轻度」。"
+          ]
+        }
+      }
     }
   },
-  "latest": "1.11.3",
+  "latest": "1.12.0",
   "minimumVersion": "1.11.1"
 }
