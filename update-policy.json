@@ -887,8 +887,45 @@
           "gone": []
         }
       }
+    },
+    "1.12.2": {
+      "publishedAt": "2026-08-12T06:40:58.052Z",
+      "sizeMb": 96,
+      "mandatory": false,
+      "notes": {
+        "en": {
+          "new": [
+            "SpaleVoice activates itself. If SpaleHub is on this computer and your licence is active, SpaleVoice now asks it for a fresh activation on its own — quietly, in the tray, with no window and nothing for you to press. It used to put a window in front of you asking you to go and sign in to a program you were already signed in to."
+          ],
+          "fixed": [
+            "The SpaleHub window no longer sits there after the problem has been solved. It watched whether SpaleHub was installed, which stops being the question the moment it is — so it went on saying \"sign in there\" to somebody who had signed in, with an active licence and the activation already on disk. It now watches the licence itself, and closes the moment SpaleVoice is allowed to run.",
+            "A licence that needs renewing no longer interrupts you first and fixes itself second. SpaleVoice gives SpaleHub twenty seconds to sort it out before showing you anything, and only says something if that did not work — which is the only time there is anything for you to do."
+          ],
+          "gone": []
+        },
+        "sr": {
+          "new": [
+            "SpaleVoice se sam aktivira. Ako je SpaleHub na ovom računaru i licenca je aktivna, SpaleVoice sada sam zatraži svežu aktivaciju — tiho, u tray-u, bez prozora i bez ijednog klika. Ranije ti je izbacivao prozor sa molbom da se prijaviš u program u koji si već bio prijavljen."
+          ],
+          "fixed": [
+            "SpaleHub prozor više ne stoji otvoren kad je problem već rešen. Gledao je da li je SpaleHub instaliran, a to prestaje da bude pitanje čim jeste — pa je i dalje pisao „prijavi se tamo“ nekome ko je prijavljen, sa aktivnom licencom i aktivacijom koja je već na disku. Sada gleda samu licencu i zatvara se čim SpaleVoice sme da radi.",
+            "Licenca kojoj treba obnova više te ne prekida prvo pa se rešava drugo. SpaleVoice da SpaleHub-u dvadeset sekundi da to sredi pre nego što ti bilo šta pokaže, i javlja se samo ako nije uspelo — a to je jedini put kada zaista imaš šta da uradiš."
+          ],
+          "gone": []
+        },
+        "zh": {
+          "new": [
+            "SpaleVoice 会自行激活。如果这台电脑上装有 SpaleHub 且你的授权处于有效状态，SpaleVoice 现在会自己去申请一份新的激活凭据——安静地在托盘中完成，没有窗口，也不需要你点任何东西。此前它会弹出一个窗口，请你去登录一个你早已登录的程序。"
+          ],
+          "fixed": [
+            "问题解决之后，SpaleHub 窗口不会再一直停在那里。它此前只关注 SpaleHub 是否已安装，而一旦安装完成，这就不再是问题所在——于是它继续对一个已经登录、授权有效、激活凭据早已写入磁盘的人说「去那边登录」。现在它关注授权本身，并在 SpaleVoice 获准运行的那一刻关闭。",
+            "需要续期的授权不会再先打断你、后自我修复。SpaleVoice 会给 SpaleHub 二十秒去处理，之后才向你显示任何内容，并且只在没能成功时才开口——那也是唯一真正需要你动手的时候。"
+          ],
+          "gone": []
+        }
+      }
     }
   },
-  "latest": "1.12.1",
+  "latest": "1.12.2",
   "minimumVersion": "1.11.1"
 }
