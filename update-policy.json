@@ -847,8 +847,48 @@
           ]
         }
       }
+    },
+    "1.12.1": {
+      "publishedAt": "2026-08-12T06:16:33.535Z",
+      "sizeMb": 96,
+      "mandatory": false,
+      "notes": {
+        "en": {
+          "new": [],
+          "fixed": [
+            "ElevenLabs Scribe and the models you keep on your own computer can now actually start. SpaleVoice asked for an OpenAI key before it would open the microphone — whichever model you had chosen — so Scribe refused to run for anyone who had pasted an ElevenLabs key in the box below it, and a model that never sends your voice anywhere was held behind paying a vendor to do nothing. It now asks for the key the model you picked actually needs, and says which one that is when it is missing.",
+            "Nothing raises an alarm about a key your model does not want any more. The status light no longer reads \"No key\", and the OpenAI row in Settings no longer shows a red warning, when you are running Scribe or a model on this computer.",
+            "The model box no longer goes blank while a model on this computer is the one doing the work. It says which one it is.",
+            "A model on this computer cannot be selected before the speech engine that runs it has been downloaded. It could be, and then the app reported itself ready, opened the microphone, and only failed once you had finished speaking.",
+            "Dictations transcribed on this computer are counted in the readout. It used to say \"nothing transcribed yet\" to somebody who had been dictating all afternoon — the spend stays at zero, because that is the truth about a model that never left your machine."
+          ],
+          "gone": []
+        },
+        "sr": {
+          "new": [],
+          "fixed": [
+            "ElevenLabs Scribe i modeli koje držiš na svom računaru sada zaista mogu da se pokrenu. SpaleVoice je tražio OpenAI ključ pre nego što uopšte otvori mikrofon — bez obzira koji si model izabrao — pa Scribe nije radio nikome ko je ElevenLabs ključ nalepio u polje ispod njega, a model koji tvoj glas nikuda i ne šalje bio je zaključan iza plaćanja nekome ko ništa ne radi. Sada traži ključ koji izabranom modelu stvarno treba, i kaže koji je to kad nedostaje.",
+            "Ništa više ne diže uzbunu zbog ključa koji tvom modelu ne treba. Statusna lampica više ne piše „No key“, a red za OpenAI u podešavanjima više ne svetli crveno, kada koristiš Scribe ili model sa ovog računara.",
+            "Polje za model više ne ostaje prazno dok posao radi model sa ovog računara. Sada piše koji je.",
+            "Model sa ovog računara ne može da se izabere pre nego što se preuzme program koji ga pokreće. Moglo je — pa se aplikacija javljala kao spremna, otvarala mikrofon, i pucala tek kad završiš rečenicu.",
+            "Diktati prepisani na ovom računaru se broje u prikazu. Ranije je pisalo „ništa još nije prepisano“ nekome ko diktira celo popodne — potrošnja ostaje nula, jer to je istina o modelu koji nikada nije napustio tvoju mašinu."
+          ],
+          "gone": []
+        },
+        "zh": {
+          "new": [],
+          "fixed": [
+            "ElevenLabs Scribe 以及保存在你自己电脑上的模型现在真的可以启动了。此前无论你选了哪个模型，SpaleVoice 都要求先有 OpenAI 密钥才肯打开麦克风——于是把 ElevenLabs 密钥填在下方输入框里的人无法使用 Scribe，而一个根本不会把你的声音发送到任何地方的模型，却被挡在向某个服务商付费的门槛之后。现在它只索取所选模型真正需要的那把密钥，缺少时也会说明是哪一把。",
+            "不再为你的模型并不需要的密钥拉响警报。使用 Scribe 或本机模型时，状态灯不再显示「No key」，设置里的 OpenAI 那一行也不再显示红色警告。",
+            "当真正在工作的是本机模型时，模型选择框不再是空白，而会写明是哪一个。",
+            "在运行模型所需的语音引擎下载完成之前，本机模型无法被选中。此前可以选中，于是应用自称就绪、打开麦克风，直到你说完才失败。",
+            "在本机转录的听写会计入统计。此前对一个整个下午都在听写的人，它仍显示「尚未转录任何内容」——花费保持为零，因为这才是一个从未离开你机器的模型的真实情况。"
+          ],
+          "gone": []
+        }
+      }
     }
   },
-  "latest": "1.12.0",
+  "latest": "1.12.1",
   "minimumVersion": "1.11.1"
 }
