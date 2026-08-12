@@ -924,8 +924,36 @@
           "gone": []
         }
       }
+    },
+    "1.12.3": {
+      "publishedAt": "2026-08-12T09:12:14.571Z",
+      "sizeMb": 96,
+      "mandatory": false,
+      "notes": {
+        "en": {
+          "new": [],
+          "fixed": [
+            "SpaleVoice now asks SpaleHub for its activation through SpaleHub's own request channel, instead of only starting it and hoping. The hub acts on the request the moment it sees it — and a request left for a hub that is not running yet is waiting for it when it starts. Starting the hub quietly in the tray is still the fallback, for when there is nothing running to hear the request."
+          ],
+          "gone": []
+        },
+        "sr": {
+          "new": [],
+          "fixed": [
+            "SpaleVoice sada traži aktivaciju preko SpaleHub-ovog sopstvenog kanala za zahteve, umesto da ga samo pokrene i nada se. Hub reaguje na zahtev čim ga vidi — a zahtev ostavljen hub-u koji još ne radi čeka ga kad se pokrene. Tiho podizanje hub-a u tray-u ostaje kao rezerva, za slučaj da nema ničega da taj zahtev pročita."
+          ],
+          "gone": []
+        },
+        "zh": {
+          "new": [],
+          "fixed": [
+            "SpaleVoice 现在通过 SpaleHub 自己的请求通道来申请激活，而不再只是启动它然后听天由命。集线器一看到请求就会立即处理——而留给尚未运行的集线器的请求，会在它启动时等着它。安静地在托盘中启动集线器仍作为后备手段，用于当前没有任何进程能读取该请求的情况。"
+          ],
+          "gone": []
+        }
+      }
     }
   },
-  "latest": "1.12.2",
+  "latest": "1.12.3",
   "minimumVersion": "1.11.1"
 }
