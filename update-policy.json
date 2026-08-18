@@ -952,8 +952,42 @@
           "gone": []
         }
       }
+    },
+    "1.12.4": {
+      "publishedAt": "2026-08-18T20:14:00.158Z",
+      "sizeMb": 96,
+      "mandatory": true,
+      "notes": {
+        "en": {
+          "new": [
+            "SpaleVoice says the moment SpaleHub is not running — one window, once, and it closes by itself when the hub is back.",
+            "Try again sits next to Open SpaleHub, though nothing needs pressing: the check runs on its own."
+          ],
+          "fixed": [
+            "Updates land cleanly — the app can no longer start on a stale cached copy of the previous version."
+          ]
+        },
+        "sr": {
+          "new": [
+            "SpaleVoice kaže čim SpaleHub nije pokrenut — jedan prozor, jednom, i sam se zatvori kad se hub vrati.",
+            "Pokušaj ponovo stoji pored Otvori SpaleHub, mada ništa ne mora da se pritiska: provera radi sama."
+          ],
+          "fixed": [
+            "Update se primenjuje čisto — aplikacija više ne može da se pokrene na starom keširanom primerku prethodne verzije."
+          ]
+        },
+        "zh": {
+          "new": [
+            "SpaleHub 未运行时，SpaleVoice 会立即告诉你 — 一个窗口，只出现一次，SpaleHub 回来后它会自行关闭。",
+            "「重试」在「打开 SpaleHub」旁边，不过什么都不用按：检查会自动进行。"
+          ],
+          "fixed": [
+            "更新干净落地 — 应用不会再从旧版本的缓存副本启动。"
+          ]
+        }
+      }
     }
   },
-  "latest": "1.12.3",
-  "minimumVersion": "1.11.1"
+  "latest": "1.12.4",
+  "minimumVersion": "1.12.4"
 }
