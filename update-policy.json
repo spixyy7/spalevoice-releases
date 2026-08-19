@@ -986,8 +986,36 @@
           ]
         }
       }
+    },
+    "1.13.0": {
+      "publishedAt": "2026-08-19T15:00:48.434Z",
+      "sizeMb": 96,
+      "mandatory": false,
+      "notes": {
+        "en": {
+          "new": [
+            "A hotkey can be a mouse button. Bind a spare side button — Mouse 4 or Mouse 5 — and start dictating without your hand leaving the mouse.",
+            "Right and middle click can be bound too, with Ctrl, Alt or Shift held.",
+            "On a mouse button, Hold to talk is a real hold: keep it down while you speak, let go when you are finished."
+          ]
+        },
+        "sr": {
+          "new": [
+            "Prečica može da bude dugme na mišu. Dodeli neko slobodno bočno dugme — Mouse 4 ili Mouse 5 — i diktiraš bez sklanjanja ruke s miša.",
+            "Može i desni i srednji klik, uz držanje Ctrl, Alt ili Shift.",
+            "Na dugmetu miša Drži da pričaš je pravo držanje: držiš dok govoriš, pustiš kad završiš."
+          ]
+        },
+        "zh": {
+          "new": [
+            "快捷键可以是鼠标按键。绑定一个空闲的侧键 — 鼠标 4 或鼠标 5 — 手不离开鼠标就能开始听写。",
+            "右键和中键也可以绑定，按住 Ctrl、Alt 或 Shift 即可。",
+            "在鼠标按键上，「按住说话」是真正的按住：说话时按住，说完松开。"
+          ]
+        }
+      }
     }
   },
-  "latest": "1.12.4",
+  "latest": "1.13.0",
   "minimumVersion": "1.12.4"
 }
