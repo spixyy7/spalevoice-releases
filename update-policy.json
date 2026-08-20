@@ -1014,8 +1014,33 @@
           ]
         }
       }
+    },
+    "1.14.0": {
+      "publishedAt": "2026-08-20T10:38:19.802Z",
+      "sizeMb": 96,
+      "mandatory": false,
+      "notes": {
+        "en": {
+          "new": [
+            "Dictation has a sound now. A soft chime as the microphone opens and the same one falling as it closes, so you know it is listening without looking away from what you are writing.",
+            "Settings → Sound: turn either chime off and set how loud they are. Every control there plays what you have just changed."
+          ]
+        },
+        "sr": {
+          "new": [
+            "Diktiranje sada ima zvuk. Tih ton kad se mikrofon otvori i isti taj, u padu, kad se zatvori — znaš da te sluša a da ne skidaš pogled s onoga što pišeš.",
+            "Settings → Sound: ugasi koji zvuk hoćeš i podesi jačinu. Svaka kontrola tu odmah pusti ono što si upravo promenio."
+          ]
+        },
+        "zh": {
+          "new": [
+            "听写现在有声音了。麦克风打开时一声轻柔的提示音，关闭时同样的音下行，不必抬头看就知道它在听。",
+            "设置 → Sound：任一提示音都可以关掉，音量也可以调。那里的每个控件都会立刻播放你刚刚改成的效果。"
+          ]
+        }
+      }
     }
   },
-  "latest": "1.13.0",
+  "latest": "1.14.0",
   "minimumVersion": "1.12.4"
 }
